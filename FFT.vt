@@ -1,0 +1,25 @@
+`timescale 1ns/100ps
+module FFTtest();
+
+wire [5:0]AA = 6'b111111;
+wire [5:0]AB = 6'b000001;
+wire [5:0]AC = 6'b000001;
+wire [5:0]AD = 6'b000000;
+wire [5:0]AE = 6'b111111;
+wire [5:0]AF = 6'b000000;
+wire [5:0]AG = 6'b000001;
+wire [5:0]AH = 6'b000000;
+
+wire [47:0]A = {AH, AG, AF, AE, AD, AC, AB, AA};
+
+FFT FFT ( .A(A), .B());
+
+initial begin
+    
+$display("Ranning testbench");
+
+$display("Stoping testbench");
+#40 $stop(); 
+end
+
+endmodule
